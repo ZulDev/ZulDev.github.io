@@ -150,12 +150,16 @@ function Game() {
 var selectMode;
 
 while (selectMode != 1 || selectMode != 2 || selectMode != 3) {
-	selectMode = prompt("Select Mode\n" + "[1] Easy\n" +
+	selectMode = prompt("Select Mode\n" + "[-1] Exit\n" + "[1] Easy\n" +
 				"[2] Normal\n" + "[3] Hard");
-	if(selectMode == 1 || selectMode == 2 || selectMode == 3) break;
+	if(selectMode == -1) break;
+	else if(selectMode == 1 || selectMode == 2 || selectMode == 3) break;
 	else alert("Masukkan Mode Yang Tertera di atas!");
 }	
+if(selectMode != -1) {
 selectModes(); // Pick The Number Random.
 Hints(); // Mendeklarasikan nilai hint
-Game();
-    
+Game();   
+} else {
+  alert("Game Dihentikan...");	
+}
